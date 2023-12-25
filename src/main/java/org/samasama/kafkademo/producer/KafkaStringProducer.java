@@ -10,10 +10,10 @@ import static java.lang.String.format;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class KafkaProducer {
+public class KafkaStringProducer {
     public final KafkaTemplate<String, String> kafkaTemplate;
 
-    public void publishMessage(String msg) {
+    public void publish(String msg) {
         log.info(format("Publishing message to test Topic: %s", msg));
         kafkaTemplate.send("test", msg);
     }
